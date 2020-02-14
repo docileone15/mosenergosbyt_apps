@@ -18,7 +18,6 @@ connect.subscribe((e) => console.log(e));
   vkConnect.send('VKWebAppInit');
 </script> 
 
-const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Мосэнергосбыт — оплата электроэнергии</PanelHeader>
 		{fetchedUser &&
@@ -28,7 +27,7 @@ const Home = ({ id, go, fetchedUser }) => (
 				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
 			>
 				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</Cell>
+			</Cell> 
 		</Group>}
 
 		<br /><center><img src="http://pay.mosenergosbyt.ru/oplata/images/logo-new.png" width="320"/></center>
