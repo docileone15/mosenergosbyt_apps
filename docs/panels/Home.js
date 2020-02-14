@@ -20,13 +20,6 @@ connect.subscribe((e) => console.log(e));
 
 	<Panel id={id}>
 		<PanelHeader>Мосэнергосбыт — оплата электроэнергии</PanelHeader>
-		
-			<Cell
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</Cell> 
 
 		<br /><center><img src="http://pay.mosenergosbyt.ru/oplata/images/logo-new.png" width="320"/></center>
 		
