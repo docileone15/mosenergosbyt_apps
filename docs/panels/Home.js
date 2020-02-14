@@ -1,5 +1,4 @@
 import React from 'react';
-import connect from '@vkontakte/vk-connect';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
@@ -9,17 +8,18 @@ import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 
-connect.subscribe((e) => console.log(e));
-
-<script src="dist/index.umd.js"></script>
- 
-<script>
-  // Sends event to client
-  vkConnect.send('VKWebAppInit');
-</script> 
-
+const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Мосэнергосбыт — оплата электроэнергии</PanelHeader>
+		{fetchedUser &&
+		<Group title="User Data Fetched with VK Connect">
+			<Cell
+				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
+				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
+			>
+				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
+			</Cell>
+		</Group>}
 
 		<br /><center><img src="http://pay.mosenergosbyt.ru/oplata/images/logo-new.png" width="320"/></center>
 		
