@@ -10,6 +10,14 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "static_path": "build",
+  "app_id": "7318571",
+  "endpoints": {
+    "mobile": "index.html",
+    "mvk": "index.html",
+    "web": "index.html"
+  }
+}
   "keywords": [],
   "author": "",
   "license": "MIT",
